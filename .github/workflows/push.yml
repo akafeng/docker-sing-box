@@ -1,0 +1,31 @@
+name: Docker Build
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - 'README.md'
+
+env:
+  REPOSITORY: sing-box
+
+jobs:
+  build:
+    name: Build Testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and cache
+        uses: docker/build-push-action@v4
+        with:
+          platforms: |
+            linux/amd64
+            linux/arm64/v8
+          cache-to: type=gha, scope=${{ env.REPOSITORY }}, mode=max
+          outputs: type=cacheonly
