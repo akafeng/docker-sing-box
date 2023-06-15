@@ -13,7 +13,7 @@ RUN set -eux \
     && ARCH=`uname -m` \
     && case "$ARCH" in \
             "x86_64") \
-                SING_BOX_FILENAME="sing-box-${SING_BOX_VERSION}-linux-amd64v3.tar.gz" \
+                SING_BOX_FILENAME="sing-box-${SING_BOX_VERSION}-linux-amd64.tar.gz" \
                 ;; \
             "aarch64") \
                 SING_BOX_FILENAME="sing-box-${SING_BOX_VERSION}-linux-arm64.tar.gz" \
