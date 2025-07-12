@@ -1,6 +1,6 @@
 FROM debian:bookworm-slim AS builder
 
-ARG SING_BOX_VERSION="1.11.11"
+ARG SING_BOX_VERSION="1.11.15"
 ARG SING_BOX_URL="https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/"
 
 RUN set -eux \
