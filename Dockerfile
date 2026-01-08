@@ -1,6 +1,6 @@
-FROM debian:bookworm-slim AS builder
+FROM debian:trixie-slim AS builder
 
-ARG SING_BOX_VERSION="1.11.15"
+ARG SING_BOX_VERSION="1.12.15"
 ARG SING_BOX_URL="https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/"
 
 RUN set -eux \
@@ -27,7 +27,7 @@ RUN set -eux \
 
 ######
 
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 COPY --from=builder /usr/local/bin/ /usr/local/bin/
 
