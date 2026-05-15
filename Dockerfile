@@ -1,6 +1,6 @@
 FROM debian:trixie-slim AS builder
 
-ARG SING_BOX_VERSION="1.12.15"
+ARG SING_BOX_VERSION="1.13.12"
 ARG SING_BOX_URL="https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/"
 
 RUN set -eux \
